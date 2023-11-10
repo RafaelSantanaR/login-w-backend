@@ -1,0 +1,21 @@
+CREATE DATABASE hollsign;
+USE hollsign;
+
+CREATE TABLE clientes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(200) NOT NULL,
+    senha VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE colecoes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE artes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    colecaoid INT,
+    FOREIGN KEY (colecaoid) REFERENCES colecoes(id)
+);
